@@ -1,7 +1,14 @@
 
+/* Navbar styles */
 .navbar {
-    background-color: #f8f9fa;
+    background-color: rgba(255, 255, 255, 0); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    font-family: "Major Mono Display", monospace;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.258); 
 }
 
 .offcanvas-header {
@@ -18,12 +25,14 @@
 }
 
 .nav-link {
-    color: #343a40;
+    color: #000000;
     margin: 0 1rem;
+    font-family: "Major Mono Display", monospace;
 }
 
-.nav-link:hover {
-    color: #0056b3;
+.nav-link:hover,
+.nav-link.active {
+    color: #d3a518 ;
 }
 
 .navbar-nav {
@@ -38,6 +47,7 @@
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    font-family: "Major Mono Display", monospace;
 }
 
 .hero-video {
@@ -66,11 +76,169 @@
 }
 
 .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 10rem;
     margin-bottom: 1rem;
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
 }
+
+.major-mono-display-regular {
+    font-family: "Major Mono Display", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+/* about section styles */
+.about-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Major Mono Display", monospace;
+}
+
+.about-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2); 
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: "Major Mono Display", monospace;
+}
+
+.about-subtitle {
+    font-size: 1.25rem;
+    font-family: "Major Mono Display", monospace;
+}
+
+/* pricing section styles */
+.pricing-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Major Mono Display", monospace;
+}
+
+.pricing-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pricing-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2); 
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.pricing-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.pricing-subtitle {
+    font-size: 1.25rem;
+}
+
+/* contact section styles */
+.contact-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Major Mono Display", monospace;
+}
+
+.contact-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contact-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2); 
+    color: white;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.contact-subtitle {
+    font-size: 1.25rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+.footer {
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa; 
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+  
