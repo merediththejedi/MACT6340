@@ -231,12 +231,23 @@ html {
 
 
 .footer {
-    padding: 20px 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
-    background-color: #f8f9fa; 
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.footer .text-uppercase {
+    font-family: 'Major Mono Display', monospace;
+    margin-bottom: 1rem;
+}
+
+.footer img {
+    transition: transform 0.2s;
+}
+
+.footer img:hover {
+    transform: scale(1.2);
 }
 
 
