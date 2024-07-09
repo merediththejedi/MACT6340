@@ -15,6 +15,8 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
 
+
+
 app.get("/", async (req, res) => {
     await db.connect().then(async () => {
         projects = await db.getAllProjects();
