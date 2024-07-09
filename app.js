@@ -18,17 +18,18 @@ app.use(express.static("public"));
 
 
 app.get("/", async (req, res) => {
-    await db.connect().then(async () => {
+    await db
+    .connect()
+    .then(async () => {
         projects = await db.getAllProjects();
         console.log(projects);
-        projects.forEach((proj) => {proj.img_url = proj.img_url.replace("/public", "")});
-        let feat = getRandomInt(projects.length);
-        res.render("index.ejs", {projectArray: projects, featProj: feat});
+        res.render("index.ejs");
     })
+   
 });
 
 app.get("/projects", (req, res) => {
-        res.render("projects.ejs", {projectArray: projects});
+        res.render("projects.ejs", {data: projects});
 });
 
 app.get("/project/:id", (req, res) => {
@@ -49,3 +50,10 @@ app.listen(port, () => {
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+
+  //projects = await db.getAllProjects();
+  //console.log(projects);
+  //projects.forEach((proj) => {proj.img_url = proj.img_url.replace("/public", "")});
+  //let feat = getRandomInt(projects.length);
+  //res.render("index.ejs", {projectArray: projects, featProj: feat});
