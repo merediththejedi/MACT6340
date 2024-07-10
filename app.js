@@ -45,12 +45,12 @@ app.get("/projects", (req, res) => {
         res.render("projects.ejs", {projectArray: projects});
 });
 
-app.get("/projects/:id", (req, res) => {
+app.get("/project/:id", (req, res) => {
     let id = req.params.id;
     if (id > data.length) {
         throw new Error("Oopsies! Try again")
     }
-    res.render("projects.ejs", {projectArray: data, which: id});
+    res.render("project.ejs", {projectArray: data, which: id});
 
 });
 
