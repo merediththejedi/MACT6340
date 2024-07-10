@@ -7,7 +7,6 @@ dotenv.config();
 
 const data = ['Project 1', 'Project 2', 'Project 3'];
 let projects = [];
-let projects2 = [];
 
 const app = express();
 const port = 3000;
@@ -15,6 +14,11 @@ app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.static("public"));
 
+db.connect().then(() => {
+    console.log('Database connected successfully.');
+}).catch(err => {
+    console.error('Database connection failed:', err);
+});
 
 
 app.get("/", async (req, res) => {
@@ -25,19 +29,28 @@ app.get("/", async (req, res) => {
         console.log(projects);
         res.render("index.ejs");
     })
-   
+   //.catch(next);
 });
+
+app.get("/about", (req, res) => {
+    res.render("about.ejs", {title: "About"});
+});
+
+app.get("/featured", (req, res) => {
+    res.render("featured.ejs", { title: "Featured" });
+});
+
 
 app.get("/projects", (req, res) => {
-        res.render("projects.ejs", {data: projects});
+        res.render("projects.ejs", {projectArray: projects});
 });
 
-app.get("/project/:id", (req, res) => {
+app.get("/projects/:id", (req, res) => {
     let id = req.params.id;
     if (id > data.length) {
-        throw new Error("No project with that ID")
+        throw new Error("Oopsies! Try again")
     }
-    res.render("project.ejs", {projectArray: data, which: id});
+    res.render("projects.ejs", {projectArray: data, which: id});
 
 });
 
