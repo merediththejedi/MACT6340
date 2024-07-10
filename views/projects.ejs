@@ -13,24 +13,19 @@
 
 <body>
     
-
-    <% projectArray.forEach((item, index) => { %>
-    <div>
-        <%- include('projectCard', {ident: item.id, image: item.img_url, name: item.project_name}); %>
-    </div>
-    <% }); %>
+    
     
     <section id="projects" class="projects-container">
         <video autoplay muted loop class="projects-video">
-            source src="/images/pricing-video.mp4" type="video/mp4">
+            <source src="/images/pricing-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="projects-overlay">
-            <h2 class="projects-title">Projetcs</h2>
+            <h2 class="projects-title">Projects</h2>
             <p class="projects-subtitle">Lorem ipsum.</p>
-            <% projectArray.forEach((item, index) => {%>
+            <% projectArray.forEach((item, index) => { %>
             <div>
-                <a href='/project/<%=index + 1 %>'><%=item%></a>
+                <%- include('projectCard', {ident: item.id, image: item.img_url, name: item.project_name}); %>
             </div>
             <% }); %>
         </div>
