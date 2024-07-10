@@ -6,7 +6,7 @@ import * as db from './utils/database.js';
 dotenv.config();
 
 const data = ['Project 1', 'Project 2', 'Project 3'];
-let projects = [];
+let projects = ['Project 1', 'Project 2', 'Project 3'];
 
 const app = express();
 const port = 3000;

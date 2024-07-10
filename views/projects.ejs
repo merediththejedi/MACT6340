@@ -25,6 +25,11 @@
         <div class="projects-overlay">
             <h2 class="projects-title">Projetcs</h2>
             <p class="projects-subtitle">Lorem ipsum.</p>
+            <% projectArray.forEach((item, index) => {%>
+            <div>
+                <a href='/project/<%=index + 1 %>'><%=item%></a>
+            </div>
+            <% }); %>
         </div>
     </section>
 
