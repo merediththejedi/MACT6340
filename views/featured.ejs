@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,14 +8,82 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.jpg">
     <meta name="author" content="meredith bowden passmore">
     <meta name="description" content="multiple quacks">
-    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .featured-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .featured-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .featured-overlay {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px; /* Adjust this value as needed */
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card-content {
+            margin-top: 20px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #b6129a;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-button:hover {
+            background-color: #b38f00;
+        }
+    </style>
 </head>
 
 <body>
     <script type="module" src="./js/index.js"></script>
-    <!DOCTYPE html>
-<html lang="en">
-
 
     <section id="featured" class="featured-container">
         <video autoplay muted loop class="featured-video">
@@ -23,8 +91,14 @@
             Your browser does not support the video tag.
         </video>
         <div class="featured-overlay">
-            <h2 class="featured-title">Featured</h2>
-            <p class="featured-subtitle">featured projects</p>
+            <div class="card">
+                <img src="./images/satellite.jpg" alt="Satellite Image" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Featured Project</h2>
+                    <p class="card-description">Description of the satellite image.</p>
+                    <a href="/projects" class="card-button">More Projects</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -33,9 +107,6 @@
     </footer>
 
     <!-- scripts -->
-</body>
-</html>
-
 </body>
 
 </html>

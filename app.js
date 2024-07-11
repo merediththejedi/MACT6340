@@ -6,7 +6,7 @@ import * as db from './utils/database.js';
 dotenv.config();
 
 const data = ['Project 1', 'Project 2', 'Project 3'];
-let projects = ['Project 1', 'Project 2', 'Project 3'];
+let projects = [];
 
 const app = express();
 const port = 3000;
@@ -27,7 +27,9 @@ app.get("/", async (req, res) => {
     .then(async () => {
         projects = await db.getAllProjects();
         console.log(projects);
-        res.render("index.ejs");
+        projects.forEach((proj) => {proj.img_url = proj.img_url.replace("/public", "")});
+        let feat = getRandomInt(projects.length);
+        res.render("index.ejs", {projectArray: projects, featProj: feat});
     })
    //.catch(next);
 });

@@ -1,13 +1,77 @@
-<div class="card m-2 h-100 fadein">
-    <img src="<%=image %>" class="card-img-top" alt="An image of the <%= name %> project">
-    <div>
-        <div class="card-title">
-            <h3>
-                <%= name %>
-            </h3>
+<style>
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center align cards horizontally */
+        gap: 20px; /* Space between cards */
+        padding: 20px; /* Optional padding around the card container */
+    }
+
+    .card {
+        width: 300px; /* Adjust card width */
+        margin-bottom: 20px; /* Space between cards vertically */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: box-shadow 0.3s ease;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 20px;
+        text-align: center; /* Center align text in card body */
+    }
+
+    .card-title {
+        font-family: 'Major Mono Display', monospace; /* Use Major Mono Display font */
+        font-size: 1.5rem; /* Adjust font size */
+        margin-bottom: 10px;
+    }
+
+    .card-footer {
+        padding: 10px;
+        background-color: #f8f9fa;
+        text-align: center;
+    }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 8px 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
+
+<div class="card-container">
+    <div class="card fadein">
+        <img src="<%= image %>" class="card-img-top" alt="An image of the <%= name %> project">
+        <div class="card-body">
+            <h3 class="card-title"><%= name %></h3>
+        </div>
+        <div class="card-footer">
+            <a href="/project/<%= ident %>" class="btn btn-primary">Project profile</a>
         </div>
     </div>
-    <div class="card-footer">
-      <a href="/project/<%=ident %>" class="btn btn-primary">Project profile</a>
-    </div>
-  </div>
+
+  
+</div>
+
